@@ -1,7 +1,13 @@
 ﻿using (HttpClient client = new HttpClient())
 {
-    string response = await client.GetStringAsync("https://guilhermeonrails.github.io/api-csharp-songs/songs.json");
+    try
+    {
+        string response = await client.GetStringAsync("https://guilhermeonrails.github.io/api-csharp-songs/songs.json");
 
-    Console.WriteLine(response);
+        Console.WriteLine(response);
+    }
+    catch (Exception ex) {
+        Console.WriteLine(ex);
+    }
 }
         
