@@ -4,31 +4,32 @@ using (HttpClient client = new HttpClient())
 {
     #region Principal
 
-    //try
-    //{
-    //    string response = await client.GetStringAsync("https://guilhermeonrails.github.io/api-csharp-songs/songs.json");
+    try
+    {
+        string response = await client.GetStringAsync("https://guilhermeonrails.github.io/api-csharp-songs/songs.json");
 
-    //    Console.WriteLine(response);
-    //}
-    //catch (Exception ex) {
-    //    Console.WriteLine(ex);
-    //}
+        Console.WriteLine(response);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex);
+    }
 
     #endregion
 
     #region
 
-    //try
-    //{
-    //    for (int i = 3; i >= 0; i--)
-    //    {
-    //        Console.WriteLine($"{10 / i}");
-    //    }
-    //}
-    //catch (Exception ex)
-    //{
-    //    Console.WriteLine($"Tivemos um problema: {ex.Message}");
-    //}
+    try
+    {
+        for (int i = 3; i >= 0; i--)
+        {
+            Console.WriteLine($"{10 / i}");
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Tivemos um problema: {ex.Message}");
+    }
 
     #endregion
 
@@ -96,6 +97,13 @@ using (HttpClient client = new HttpClient())
     }
 
     #endregion
+
+    #endregion
+
+    #region
+
+    string resposta = await client.GetStringAsync("https://anapioficeandfire.com/api/books/1");
+    Console.WriteLine(resposta);
 
     #endregion
 }
