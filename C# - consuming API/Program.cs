@@ -1,4 +1,6 @@
-﻿using (HttpClient client = new HttpClient())
+﻿using C____consuming_API;
+
+using (HttpClient client = new HttpClient())
 {
     #region Principal
 
@@ -48,6 +50,50 @@
     #endregion
 
     #region 2
+
+    try
+        {
+            Console.Write("Write your first number: ");
+        int n = int.Parse(Console.ReadLine());
+
+        Console.Write("Write your second number: ");
+        int n2 = int.Parse(Console.ReadLine());
+
+        int result = n / n2;
+        Console.WriteLine($"result: {result}");
+    }
+    catch (DivideByZeroException ex)
+    {
+        Console.WriteLine(ex);
+    }
+
+    #endregion
+
+    #region 3
+
+    try
+    {
+        List<int> numbers = new List<int> { 10, 7, 8 };
+        Console.WriteLine($"Elemento no índice 5: {numbers[6]}");
+    }
+    catch (ArgumentOutOfRangeException ex)
+    {
+        Console.WriteLine($"Erro: {ex.Message}");
+    }
+
+    #endregion
+
+    #region 4
+
+    try
+    {
+        myClass objetoNulo = null;
+        objetoNulo.MyMethod();
+    }
+    catch (NullReferenceException ex)
+    {
+        Console.WriteLine($"Erro: {ex.Message}");
+    }
 
     #endregion
 
