@@ -1,4 +1,6 @@
 ﻿using C____consuming_API;
+using C____consuming_API.Models;
+using System.Text.Json;
 
 using (HttpClient client = new HttpClient())
 {
@@ -8,7 +10,11 @@ using (HttpClient client = new HttpClient())
     {
         string response = await client.GetStringAsync("https://guilhermeonrails.github.io/api-csharp-songs/songs.json");
 
-        Console.WriteLine(response);
+        //Console.WriteLine(response);
+
+        var musics = JsonSerializer.Deserialize<List<Music>>(response)!;
+
+        musics[1998].ShowInfo();
     }
     catch (Exception ex)
     {
@@ -17,94 +23,97 @@ using (HttpClient client = new HttpClient())
 
     #endregion
 
-    #region
+    #region comentado
 
-    try
-    {
-        for (int i = 3; i >= 0; i--)
-        {
-            Console.WriteLine($"{10 / i}");
-        }
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"Tivemos um problema: {ex.Message}");
-    }
+    //#region
 
-    #endregion
+    //try
+    //{
+    //    for (int i = 3; i >= 0; i--)
+    //    {
+    //        Console.WriteLine($"{10 / i}");
+    //    }
+    //}
+    //catch (Exception ex)
+    //{
+    //    Console.WriteLine($"Tivemos um problema: {ex.Message}");
+    //}
 
-    #region Primeiro Desafios
+    //#endregion
 
-    #region 1
+    //#region Primeiro Desafios
 
-    try
-    {
-        string response = await client.GetStringAsync("https://www.cheapshark.com/api/1.0/deals");
+    //#region 1
 
-        Console.WriteLine(response);
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine(ex);
-    }
+    //try
+    //{
+    //    string response = await client.GetStringAsync("https://www.cheapshark.com/api/1.0/deals");
 
-    #endregion
+    //    Console.WriteLine(response);
+    //}
+    //catch (Exception ex)
+    //{
+    //    Console.WriteLine(ex);
+    //}
 
-    #region 2
+    //#endregion
 
-    try
-        {
-            Console.Write("Write your first number: ");
-        int n = int.Parse(Console.ReadLine());
+    //#region 2
 
-        Console.Write("Write your second number: ");
-        int n2 = int.Parse(Console.ReadLine());
+    //try
+    //    {
+    //        Console.Write("Write your first number: ");
+    //    int n = int.Parse(Console.ReadLine());
 
-        int result = n / n2;
-        Console.WriteLine($"result: {result}");
-    }
-    catch (DivideByZeroException ex)
-    {
-        Console.WriteLine(ex);
-    }
+    //    Console.Write("Write your second number: ");
+    //    int n2 = int.Parse(Console.ReadLine());
 
-    #endregion
+    //    int result = n / n2;
+    //    Console.WriteLine($"result: {result}");
+    //}
+    //catch (DivideByZeroException ex)
+    //{
+    //    Console.WriteLine(ex);
+    //}
 
-    #region 3
+    //#endregion
 
-    try
-    {
-        List<int> numbers = new List<int> { 10, 7, 8 };
-        Console.WriteLine($"Elemento no índice 5: {numbers[6]}");
-    }
-    catch (ArgumentOutOfRangeException ex)
-    {
-        Console.WriteLine($"Erro: {ex.Message}");
-    }
+    //#region 3
 
-    #endregion
+    //try
+    //{
+    //    List<int> numbers = new List<int> { 10, 7, 8 };
+    //    Console.WriteLine($"Elemento no índice 5: {numbers[6]}");
+    //}
+    //catch (ArgumentOutOfRangeException ex)
+    //{
+    //    Console.WriteLine($"Erro: {ex.Message}");
+    //}
 
-    #region 4
+    //#endregion
 
-    try
-    {
-        myClass objetoNulo = null;
-        objetoNulo.MyMethod();
-    }
-    catch (NullReferenceException ex)
-    {
-        Console.WriteLine($"Erro: {ex.Message}");
-    }
+    //#region 4
 
-    #endregion
+    //try
+    //{
+    //    myClass objetoNulo = null;
+    //    objetoNulo.MyMethod();
+    //}
+    //catch (NullReferenceException ex)
+    //{
+    //    Console.WriteLine($"Erro: {ex.Message}");
+    //}
 
-    #endregion
+    //#endregion
 
-    #region
+    //#endregion
 
-    string resposta = await client.GetStringAsync("https://anapioficeandfire.com/api/books/1");
-    Console.WriteLine(resposta);
+    //#region
 
+    //string resposta = await client.GetStringAsync("https://anapioficeandfire.com/api/books/1");
+    //Console.WriteLine(resposta);
+
+    //#endregion
     #endregion
 }
 
