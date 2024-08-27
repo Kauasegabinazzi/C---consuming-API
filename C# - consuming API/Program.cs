@@ -134,24 +134,62 @@ using (HttpClient client = new HttpClient())
 
     //#endregion
 
-    #endregion
+    //#region
 
-    #region
+    //try
+    //{
+    //    string response = await client.GetStringAsync("https://raw.githubusercontent.com/ArthurOcFernandes/Exerc-cios-C-/curso-4-aula-2/Jsons/Paises.json");
 
-    try
-    {
-        string response = await client.GetStringAsync("https://raw.githubusercontent.com/ArthurOcFernandes/Exerc-cios-C-/curso-4-aula-2/Jsons/Paises.json");
+    //    var coutrys = JsonSerializer.Deserialize<List<Country>>(response);
+    //    foreach (var country in coutrys)
+    //    {
+    //        Console.WriteLine(country.Info);
+    //    }
+    //}
+    //catch (Exception ex)
+    //{
+    //    Console.WriteLine($"We have a probleam: {ex.Message}");
+    //}
 
-        var coutrys = JsonSerializer.Deserialize<List<Country>>(response);
-        foreach (var country in coutrys)
-        {
-            Console.WriteLine(country.Info);
-        }
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"We have a probleam: {ex.Message}");
-    }
+    //#endregion
+
+    //#region
+
+    //try
+    //{
+    //    string response = await client.GetStringAsync("https://github.com/ArthurOcFernandes/Exerc-cios-C-/raw/curso-4-aula-2/Jsons/Carros.json");
+
+    //    var cars = JsonSerializer.Deserialize<List<Car>>(response);
+    //    foreach (var car in cars)
+    //    {
+    //        Console.WriteLine(car.Info);
+    //    }
+    //}
+    //catch (Exception ex)
+    //{
+    //    Console.WriteLine($"We have a problem: {ex.Message}");
+    //}
+
+    //#endregion
+
+    //#region
+
+    //try
+    //{
+    //    string response = await client.GetStringAsync("https://github.com/ArthurOcFernandes/Exerc-cios-C-/raw/curso-4-aula-2/Jsons/Livros.json");
+
+    //    var books = JsonSerializer.Deserialize<List<Books>>(response);
+    //    foreach (var book in books)
+    //    {
+    //        Console.WriteLine(book.TechnicalSheet);
+    //    }
+    //}
+    //catch (Exception ex)
+    //{
+    //    Console.WriteLine($"we have a problem: {ex.Message}");
+    //}
+
+    //#endregion
 
     #endregion
 }
