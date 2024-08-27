@@ -135,5 +135,24 @@ using (HttpClient client = new HttpClient())
     //#endregion
 
     #endregion
+
+    #region
+
+    try
+    {
+        string response = await client.GetStringAsync("https://raw.githubusercontent.com/ArthurOcFernandes/Exerc-cios-C-/curso-4-aula-2/Jsons/Paises.json");
+
+        var coutrys = JsonSerializer.Deserialize<List<Country>>(response);
+        foreach (var country in coutrys)
+        {
+            Console.WriteLine(country.Info);
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"We have a probleam: {ex.Message}");
+    }
+
+    #endregion
 }
 
