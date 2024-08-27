@@ -114,6 +114,26 @@ using (HttpClient client = new HttpClient())
     //Console.WriteLine(resposta);
 
     //#endregion
+
+    //#region movie
+
+    //try
+    //{
+    //    string response = await client.GetStringAsync("https://raw.githubusercontent.com/ArthurOcFernandes/Exerc-cios-C-/curso-4-aula-2/Jsons/TopMovies.json");
+
+    //    var movies = JsonSerializer.Deserialize<List<Movie>>(response);
+    //    foreach (var movie in movies)
+    //    {
+    //        Console.WriteLine(movie.TechnicalSheet);
+    //    }
+    //}
+    //catch (Exception ex)
+    //{
+    //    Console.WriteLine($"We have a probleam: {ex.Message}");
+    //}
+
+    //#endregion
+
     #endregion
 }
 
