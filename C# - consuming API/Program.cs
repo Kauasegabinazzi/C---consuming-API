@@ -15,6 +15,11 @@ using (HttpClient client = new HttpClient())
         var musics = JsonSerializer.Deserialize<List<Music>>(response)!;
 
         musics[1998].ShowInfo();
+
+        string json = await client.GetStringAsync("https://www.anapioficeandfire.com/api/characters/16");
+
+        Character margaery = JsonSerializer.Deserialize<Character>(json)!;
+        margaery.ExibirApelidosDaPersonagem();
     }
     catch (Exception ex)
     {
