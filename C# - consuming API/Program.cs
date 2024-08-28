@@ -24,7 +24,9 @@ using (HttpClient client = new HttpClient())
 
         //LinqFilter.GenderFilters(musics);
 
-        LinqOrder.ShowArtistListOrder(musics);
+        //LinqOrder.ShowArtistListOrder(musics);
+
+        LinqFilter.ArtistForGenderFilter(musics, "rock");
     }
     catch (Exception ex)
     {
