@@ -1,4 +1,5 @@
 ﻿using C____consuming_API;
+using C____consuming_API.Filters;
 using C____consuming_API.Models;
 using System.Text.Json;
 
@@ -14,12 +15,14 @@ using (HttpClient client = new HttpClient())
 
         var musics = JsonSerializer.Deserialize<List<Music>>(response)!;
 
-        musics[1998].ShowInfo();
+        //musics[1998].ShowInfo();
 
-        string json = await client.GetStringAsync("https://www.anapioficeandfire.com/api/characters/16");
+        //string json = await client.GetStringAsync("https://www.anapioficeandfire.com/api/characters/16");
 
-        Character margaery = JsonSerializer.Deserialize<Character>(json)!;
-        margaery.ExibirApelidosDaPersonagem();
+        //Character margaery = JsonSerializer.Deserialize<Character>(json)!;
+        //margaery.ExibirApelidosDaPersonagem();
+
+        LinqFilter.GenderFilters(musics);
     }
     catch (Exception ex)
     {
