@@ -22,7 +22,9 @@ using (HttpClient client = new HttpClient())
         //Character margaery = JsonSerializer.Deserialize<Character>(json)!;
         //margaery.ExibirApelidosDaPersonagem();
 
-        LinqFilter.GenderFilters(musics);
+        //LinqFilter.GenderFilters(musics);
+
+        LinqOrder.ShowArtistListOrder(musics);
     }
     catch (Exception ex)
     {
