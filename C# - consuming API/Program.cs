@@ -26,7 +26,9 @@ using (HttpClient client = new HttpClient())
 
         //LinqOrder.ShowArtistListOrder(musics);
 
-        LinqFilter.ArtistForGenderFilter(musics, "rock");
+        //LinqFilter.ArtistForGenderFilter(musics, "rock");
+
+        LinqFilter.SongsOfArtistsFilter(musics, "Michel Teló");
     }
     catch (Exception ex)
     {
