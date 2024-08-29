@@ -29,6 +29,10 @@ using (HttpClient client = new HttpClient())
         //LinqFilter.ArtistForGenderFilter(musics, "rock");
 
         //LinqFilter.SongsOfArtistsFilter(musics, "Michel Teló");
+
+        LinqFilter.FiltrarMusicasPeloAno(musics, 2012);
+
+
     }
     catch (Exception ex)
     {
@@ -209,43 +213,43 @@ using (HttpClient client = new HttpClient())
 
     #region
 
-//    List<string> typeStrings = new List<string> { "teste", "teste1", "teste3", "teste3", "teste2"};
+    //    List<string> typeStrings = new List<string> { "teste", "teste1", "teste3", "teste3", "teste2"};
 
-//    var typeStringss = typeStrings.Distinct();
+    //    var typeStringss = typeStrings.Distinct();
 
-//    foreach (var type in typeStringss)
-//    {
-//        Console.Write(type + " ");
-//    }
+    //    foreach (var type in typeStringss)
+    //    {
+    //        Console.Write(type + " ");
+    //    }
 
-//    List<string> lista1 = new List<string> { "asdsd", "teste1",  };
-//    List<string> lista2 = new List<string> { "fdsf", "teste1", };
+    //    List<string> lista1 = new List<string> { "asdsd", "teste1",  };
+    //    List<string> lista2 = new List<string> { "fdsf", "teste1", };
 
-//    var strings = lista1.Intersect(lista2);
+    //    var strings = lista1.Intersect(lista2);
 
-//    foreach (var type in strings)
-//    {
-//        Console.Write(type + " ");
-//    }
+    //    foreach (var type in strings)
+    //    {
+    //        Console.Write(type + " ");
+    //    }
 
-//    List<Books> livros = new List<Books>
-//{
-//    new Books { Title = "Aprendendo LINQ", Author = "João Silva", Year = 2005 },
-//    new Books { Title = "Programação em C#", Author = "Ana Oliveira", Year = 2010 },
-//    new Books { Title = "Algoritmos e Estruturas de Dados", Author = "Carlos Santos", Year = 1998 },
-//    new Books { Title = "Introdução à Inteligência Artificial", Author = "Mariana Costa", Year = 1900 },
-//    new Books { Title = "Design Patterns", Author = "Paulo Rocha", Year = 1900 }
-//};
+    //    List<Books> livros = new List<Books>
+    //{
+    //    new Books { Title = "Aprendendo LINQ", Author = "João Silva", Year = 2005 },
+    //    new Books { Title = "Programação em C#", Author = "Ana Oliveira", Year = 2010 },
+    //    new Books { Title = "Algoritmos e Estruturas de Dados", Author = "Carlos Santos", Year = 1998 },
+    //    new Books { Title = "Introdução à Inteligência Artificial", Author = "Mariana Costa", Year = 1900 },
+    //    new Books { Title = "Design Patterns", Author = "Paulo Rocha", Year = 1900 }
+    //};
 
-//    var books = livros
-//        .Where(l => l.Year > 2000)
-//        .OrderBy(l => l.Title)
-//        .Select(l => l.Title);
+    //    var books = livros
+    //        .Where(l => l.Year > 2000)
+    //        .OrderBy(l => l.Title)
+    //        .Select(l => l.Title);
 
-//    foreach (var title in books)
-//    {
-//        Console.WriteLine("Títulos de livros publicados após 2000, ordenados alfabeticamente:" + title);
-//    }
+    //    foreach (var title in books)
+    //    {
+    //        Console.WriteLine("Títulos de livros publicados após 2000, ordenados alfabeticamente:" + title);
+    //    }
 
     //List<Products> produtos = new List<Products>
     //    {
@@ -257,6 +261,26 @@ using (HttpClient client = new HttpClient())
 
     //Console.WriteLine("Preço médio dos produtos: " + precoMedio);
 
+
+    //List<string> words = new List<string> { "ma", "ti", "teste", "mu", "tipo" };
+
+    //var filter = words.Where(p => p.Length > 3).OrderBy(p => p.Length);
+
+    //Console.WriteLine("Palavras com mais de 3 caracteres, ordenadas por comprimento:");
+    //foreach (var wordss in filter)
+    //{
+    //    Console.Write(wordss + " ");
+    //}
+
+    //List<int> number = new List<int> { 1,6,8,4,7,10,5, };
+
+    //var par = number.Where(x => x % 2 == 0);
+
+    //Console.WriteLine("Números Pares:");
+    //foreach (var numbers in par)
+    //{
+    //    Console.Write(numbers + " ");
+    //}
 
     #endregion
 }
