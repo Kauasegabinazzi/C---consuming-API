@@ -209,25 +209,53 @@ using (HttpClient client = new HttpClient())
 
     #region
 
-    List<string> typeStrings = new List<string> { "teste", "teste1", "teste3", "teste3", "teste2"};
+//    List<string> typeStrings = new List<string> { "teste", "teste1", "teste3", "teste3", "teste2"};
 
-    var typeStringss = typeStrings.Distinct();
+//    var typeStringss = typeStrings.Distinct();
 
-    foreach (var type in typeStringss)
-    {
-        Console.Write(type + " ");
-    }
+//    foreach (var type in typeStringss)
+//    {
+//        Console.Write(type + " ");
+//    }
 
-    List<string> lista1 = new List<string> { "asdsd", "teste1",  };
-    List<string> lista2 = new List<string> { "fdsf", "teste1", };
+//    List<string> lista1 = new List<string> { "asdsd", "teste1",  };
+//    List<string> lista2 = new List<string> { "fdsf", "teste1", };
 
-    var strings = lista1.Intersect(lista2);
+//    var strings = lista1.Intersect(lista2);
 
-    foreach (var type in strings)
-    {
-        Console.Write(type + " ");
-    }
+//    foreach (var type in strings)
+//    {
+//        Console.Write(type + " ");
+//    }
 
+//    List<Books> livros = new List<Books>
+//{
+//    new Books { Title = "Aprendendo LINQ", Author = "João Silva", Year = 2005 },
+//    new Books { Title = "Programação em C#", Author = "Ana Oliveira", Year = 2010 },
+//    new Books { Title = "Algoritmos e Estruturas de Dados", Author = "Carlos Santos", Year = 1998 },
+//    new Books { Title = "Introdução à Inteligência Artificial", Author = "Mariana Costa", Year = 1900 },
+//    new Books { Title = "Design Patterns", Author = "Paulo Rocha", Year = 1900 }
+//};
+
+//    var books = livros
+//        .Where(l => l.Year > 2000)
+//        .OrderBy(l => l.Title)
+//        .Select(l => l.Title);
+
+//    foreach (var title in books)
+//    {
+//        Console.WriteLine("Títulos de livros publicados após 2000, ordenados alfabeticamente:" + title);
+//    }
+
+    //List<Products> produtos = new List<Products>
+    //    {
+    //        new Products { Name = "Laptop", Price = 1200 },
+    //        new Products { Name = "Smartphone", Price = 800 },
+    //    };
+
+    //var precoMedio = produtos.Average(p => p.Price);
+
+    //Console.WriteLine("Preço médio dos produtos: " + precoMedio);
 
 
     #endregion
