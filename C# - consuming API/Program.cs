@@ -28,7 +28,7 @@ using (HttpClient client = new HttpClient())
 
         //LinqFilter.ArtistForGenderFilter(musics, "rock");
 
-        LinqFilter.SongsOfArtistsFilter(musics, "Michel Teló");
+        //LinqFilter.SongsOfArtistsFilter(musics, "Michel Teló");
     }
     catch (Exception ex)
     {
@@ -204,6 +204,21 @@ using (HttpClient client = new HttpClient())
     //}
 
     //#endregion
+
+    #endregion
+
+    #region
+
+    List<string> typeStrings = new List<string> { "teste", "teste1", "teste3", "teste3", "teste2"};
+
+    var typeStringss = typeStrings.Distinct();
+
+    foreach (var type in typeStringss)
+    {
+        Console.Write(type + " ");
+    }
+
+
 
     #endregion
 }
