@@ -218,6 +218,16 @@ using (HttpClient client = new HttpClient())
         Console.Write(type + " ");
     }
 
+    List<string> lista1 = new List<string> { "asdsd", "teste1",  };
+    List<string> lista2 = new List<string> { "fdsf", "teste1", };
+
+    var strings = lista1.Intersect(lista2);
+
+    foreach (var type in strings)
+    {
+        Console.Write(type + " ");
+    }
+
 
 
     #endregion
