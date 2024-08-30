@@ -37,7 +37,7 @@ internal class FavoriteSongs
         string fileName = $"musica-favoritas-{Name}.json";
 
         File.WriteAllText(fileName, json);
-        Console.WriteLine("Sucess");
+        Console.WriteLine("Sucess" + Path.GetFullPath(fileName));
     }
 }
 
