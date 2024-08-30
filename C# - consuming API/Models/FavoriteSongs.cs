@@ -23,6 +23,7 @@ internal class FavoriteSongs
         {
             Console.WriteLine(song.Names + " - " + song.Artists);
         }
+        Console.WriteLine();
     }
 }
 
