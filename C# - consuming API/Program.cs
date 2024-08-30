@@ -39,7 +39,7 @@ using (HttpClient client = new HttpClient())
         favoriteSongs.Add(musics[93]);
         favoriteSongs.Add(musics[90]);
 
-        favoriteSongs.Info();
+        favoriteSongs.CreateFileJson();
     }
     catch (Exception ex)
     {

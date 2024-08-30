@@ -1,4 +1,5 @@
-﻿namespace C____consuming_API.Models;
+﻿using System.Text.Json;
+namespace C____consuming_API.Models;
 
 internal class FavoriteSongs
 {
@@ -24,6 +25,19 @@ internal class FavoriteSongs
             Console.WriteLine(song.Names + " - " + song.Artists);
         }
         Console.WriteLine();
+    }
+
+    public void CreateFileJson()
+    {
+        string json = JsonSerializer.Serialize(new
+        {
+            name = Name,
+            songs = FavoriteSongsList
+        });
+        string fileName = $"musica-favoritas-{Name}.json";
+
+        File.WriteAllText(fileName, json);
+        Console.WriteLine("Sucess");
     }
 }
 
