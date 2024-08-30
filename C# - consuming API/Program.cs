@@ -30,7 +30,7 @@ using (HttpClient client = new HttpClient())
 
         //LinqFilter.SongsOfArtistsFilter(musics, "Michel Teló");
 
-        LinqFilter.FiltrarMusicasPeloAno(musics, 2012);
+        //LinqFilter.FiltrarMusicasPeloAno(musics, 2012);
 
 
     }
