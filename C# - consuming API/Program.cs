@@ -333,40 +333,102 @@ using (HttpClient client = new HttpClient())
     //    Console.WriteLine($"The file {fileName} doesn't exist.");
     //}
 
-    List<Person> pessoas = new List<Person>();
+    //List<Person> pessoas = new List<Person>();
 
-    // Permitir ao usuário inserir informações de várias pessoas
-    while (true)
-    {
-        Person pessoa = new Person();
-        Console.Write("Digite o nome (ou 'sair' para encerrar): ");
-        string nome = Console.ReadLine();
+    //// Permitir ao usuário inserir informações de várias pessoas
+    //while (true)
+    //{
+    //    Person pessoa = new Person();
+    //    Console.Write("Digite o nome (ou 'sair' para encerrar): ");
+    //    string nome = Console.ReadLine();
 
-        if (nome.ToLower() == "sair")
-            break;
+    //    if (nome.ToLower() == "sair")
+    //        break;
 
-        pessoa.Name = nome;
+    //    pessoa.Name = nome;
 
-        Console.Write("Digite a idade: ");
-        pessoa.Age = int.Parse(Console.ReadLine());
+    //    Console.Write("Digite a idade: ");
+    //    pessoa.Age = int.Parse(Console.ReadLine());
 
-        Console.Write("Digite o e-mail: ");
-        pessoa.Email = Console.ReadLine();
+    //    Console.Write("Digite o e-mail: ");
+    //    pessoa.Email = Console.ReadLine();
 
-        // Adicionar pessoa à lista
-        pessoas.Add(pessoa);
-    }
+    //    // Adicionar pessoa à lista
+    //    pessoas.Add(pessoa);
+    //}
 
-    // Serializar a lista em JSON
-    string jsonString = JsonSerializer.Serialize(pessoas);
+    //// Serializar a lista em JSON
+    //string jsonString = JsonSerializer.Serialize(pessoas);
 
-    // Nome do arquivo para salvar
-    string fileName = "person.json";
+    //// Nome do arquivo para salvar
+    //string fileName = "person.json";
 
-    // Escrever JSON no arquivo
-    File.WriteAllText(fileName, jsonString);
+    //// Escrever JSON no arquivo
+    //File.WriteAllText(fileName, jsonString);
 
-    Console.WriteLine($"Os dados foram salvos em {fileName}");
+    //Console.WriteLine($"Os dados foram salvos em {fileName}");
+
+    //string fileName = "person.json";
+
+    //// Verificar se o arquivo existe
+    //if (File.Exists(fileName))
+    //{
+    //    // Ler conteúdo do arquivo JSON
+    //    string jsonString = File.ReadAllText(fileName);
+
+    //    // Desserializar JSON para lista de pessoas
+    //    List<Person> pessoas = JsonSerializer.Deserialize<List<Person>>(jsonString);
+
+    //    // Exibir informações das pessoas
+    //    Console.WriteLine("Informações das Pessoas:");
+
+    //    foreach (Person pessoa in pessoas)
+    //    {
+    //        Console.WriteLine($"Name: {pessoa.Name}, Age: {pessoa.Age}, E-mail: {pessoa.Email}");
+    //    }
+    //}
+    //else
+    //{
+    //    Console.WriteLine($"O arquivo {fileName} não existe.");
+    //}
+
+    //string fileName = "person.json";
+
+    //// Verificar se o arquivo existe
+    //if (File.Exists(fileName))
+    //{
+    //    // Ler conteúdo do arquivo JSON
+    //    string jsonString = File.ReadAllText(fileName);
+
+    //    // Desserializar JSON para lista de pessoas
+    //    List<Person> pessoas = JsonSerializer.Deserialize<List<Person>>(jsonString);
+
+    //    // Permitir ao usuário inserir uma idade
+    //    Console.Write("Digite a idade para buscar pessoas: ");
+    //    int idadeParaBuscar = int.Parse(Console.ReadLine());
+
+    //    // Filtrar pessoas com a idade especificada
+    //    List<Person> pessoasComIdade = pessoas.Where(p => p.Age == idadeParaBuscar).ToList();
+
+    //    if (pessoasComIdade.Any())
+    //    {
+    //        // Exibir informações das pessoas com a idade especificada
+    //        Console.WriteLine($"Pessoas com {idadeParaBuscar} anos:");
+
+    //        foreach (Person pessoa in pessoasComIdade)
+    //        {
+    //            Console.WriteLine($"Nome: {pessoa.Name}, E-mail: {pessoa.Email}");
+    //        }
+    //    }
+    //    else
+    //    {
+    //        Console.WriteLine($"Nenhuma pessoa encontrada com {idadeParaBuscar} anos.");
+    //    }
+    //}
+    //else
+    //{
+    //    Console.WriteLine($"O arquivo {fileName} não existe.");
+    //}
 
     #endregion
 }
