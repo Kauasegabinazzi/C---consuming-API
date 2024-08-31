@@ -39,7 +39,7 @@ using (HttpClient client = new HttpClient())
         favoriteSongs.Add(musics[93]);
         favoriteSongs.Add(musics[90]);
 
-        favoriteSongs.CreateFileJson();
+        //favoriteSongs.CreateFileJson();
     }
     catch (Exception ex)
     {
@@ -293,16 +293,72 @@ using (HttpClient client = new HttpClient())
 
     #region
 
-    Person person = new Person();
-    Console.Write("Digite o nome: ");
-    person.Name = Console.ReadLine();
-    Console.Write("Digite a idade: ");
-    person.Age = int.Parse(Console.ReadLine());
-    Console.Write("Digite o e-mail: ");
-    person.Email = Console.ReadLine();
+    //Person person = new Person();
+    //Console.Write("Digite o nome: ");
+    //person.Name = Console.ReadLine();
+    //Console.Write("Digite a idade: ");
+    //person.Age = int.Parse(Console.ReadLine());
+    //Console.Write("Digite o e-mail: ");
+    //person.Email = Console.ReadLine();
 
-    // Serializar a pessoa em JSON
-    string jsonString = JsonSerializer.Serialize(person);
+    //// Serializar a pessoa em JSON
+    //string jsonString = JsonSerializer.Serialize(person);
+
+    //// Nome do arquivo para salvar
+    //string fileName = "person.json";
+
+    //// Escrever JSON no arquivo
+    //File.WriteAllText(fileName, jsonString);
+
+    //Console.WriteLine($"Os dados foram salvos em {fileName}");
+
+    //string fileName = "pessoa.json";
+
+    //// Verificar se o arquivo existe
+    //if (File.Exists(fileName))
+    //{
+    //    // Ler conteúdo do arquivo JSON
+    //    string jsonString = File.ReadAllText(fileName);
+
+    //    // Desserializar JSON para objeto Pessoa
+    //    Person pessoa = JsonSerializer.Deserialize<Person>(jsonString);
+
+    //    // Exibir informações da pessoa
+    //    Console.WriteLine($"name: {pessoa.Name}");
+    //    Console.WriteLine($"age: {pessoa.Age}");
+    //    Console.WriteLine($"E-mail: {pessoa.Email}");
+    //}
+    //else
+    //{
+    //    Console.WriteLine($"The file {fileName} doesn't exist.");
+    //}
+
+    List<Person> pessoas = new List<Person>();
+
+    // Permitir ao usuário inserir informações de várias pessoas
+    while (true)
+    {
+        Person pessoa = new Person();
+        Console.Write("Digite o nome (ou 'sair' para encerrar): ");
+        string nome = Console.ReadLine();
+
+        if (nome.ToLower() == "sair")
+            break;
+
+        pessoa.Name = nome;
+
+        Console.Write("Digite a idade: ");
+        pessoa.Age = int.Parse(Console.ReadLine());
+
+        Console.Write("Digite o e-mail: ");
+        pessoa.Email = Console.ReadLine();
+
+        // Adicionar pessoa à lista
+        pessoas.Add(pessoa);
+    }
+
+    // Serializar a lista em JSON
+    string jsonString = JsonSerializer.Serialize(pessoas);
 
     // Nome do arquivo para salvar
     string fileName = "person.json";
