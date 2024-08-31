@@ -15,7 +15,7 @@ using (HttpClient client = new HttpClient())
 
         var musics = JsonSerializer.Deserialize<List<Music>>(response)!;
 
-        //musics[1998].ShowInfo();
+        musics[0].ShowInfo();
 
         //string json = await client.GetStringAsync("https://www.anapioficeandfire.com/api/characters/16");
 
@@ -32,12 +32,12 @@ using (HttpClient client = new HttpClient())
 
         //LinqFilter.FiltrarMusicasPeloAno(musics, 2012);
 
-        var favoriteSongs = new FavoriteSongs("Daniel");
-        favoriteSongs.Add(musics[1]);
-        favoriteSongs.Add(musics[32]);
-        favoriteSongs.Add(musics[73]);
-        favoriteSongs.Add(musics[93]);
-        favoriteSongs.Add(musics[90]);
+        //var favoriteSongs = new FavoriteSongs("Daniel");
+        //favoriteSongs.Add(musics[1]);
+        //favoriteSongs.Add(musics[32]);
+        //favoriteSongs.Add(musics[73]);
+        //favoriteSongs.Add(musics[93]);
+        //favoriteSongs.Add(musics[90]);
 
         //favoriteSongs.CreateFileJson();
     }
