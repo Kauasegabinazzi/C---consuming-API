@@ -31,13 +31,27 @@ internal class FavoriteSongs
     {
         string json = JsonSerializer.Serialize(new
         {
-            name = Name,
-            songs = FavoriteSongsList
+            nome = Name,
+            musicas = FavoriteSongsList
         });
-        string fileName = $"musica-favoritas-{Name}.json";
+        string nomeDoArquivo = $"musicas-favoritas-{Name}.json";
 
-        File.WriteAllText(fileName, json);
-        Console.WriteLine("Sucess" + Path.GetFullPath(fileName));
+        File.WriteAllText(nomeDoArquivo, json);
+        Console.WriteLine("O arquivo Json foi criado com sucesso!");
+    }
+
+    public void GerarDocumentoTXTComAsMusicasFavoritas()
+    {
+        string nomeDoArquivo = $"musicas-favoritas-{Name}.txt";
+        using (StreamWriter arquivo = new StreamWriter(nomeDoArquivo))
+        {
+            arquivo.WriteLine($"Músicas favoritas do {Name}\n");
+            foreach (var musica in FavoriteSongsList)
+            {
+                arquivo.WriteLine($"- {musica.Names}");
+            }
+        }
+        Console.WriteLine("txt gerado com sucesso!");
     }
 }
 

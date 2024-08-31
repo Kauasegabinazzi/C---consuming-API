@@ -290,5 +290,28 @@ using (HttpClient client = new HttpClient())
     //}
 
     #endregion
+
+    #region
+
+    Person person = new Person();
+    Console.Write("Digite o nome: ");
+    person.Name = Console.ReadLine();
+    Console.Write("Digite a idade: ");
+    person.Age = int.Parse(Console.ReadLine());
+    Console.Write("Digite o e-mail: ");
+    person.Email = Console.ReadLine();
+
+    // Serializar a pessoa em JSON
+    string jsonString = JsonSerializer.Serialize(person);
+
+    // Nome do arquivo para salvar
+    string fileName = "person.json";
+
+    // Escrever JSON no arquivo
+    File.WriteAllText(fileName, jsonString);
+
+    Console.WriteLine($"Os dados foram salvos em {fileName}");
+
+    #endregion
 }
 
