@@ -15,7 +15,10 @@ using (HttpClient client = new HttpClient())
 
         var musics = JsonSerializer.Deserialize<List<Music>>(response)!;
 
-        musics[0].ShowInfo();
+        LinqFilter.FilterSongsByCSharp(musics);
+
+
+        //musics[0].ShowInfo();
 
         //string json = await client.GetStringAsync("https://www.anapioficeandfire.com/api/characters/16");
 

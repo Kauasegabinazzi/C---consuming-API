@@ -49,5 +49,17 @@ internal class LinqFilter
             Console.WriteLine($"- {musica}");
         }
     }
+
+    public static void FilterSongsByCSharp(List<Music> songs)
+    {
+        var songss = songs
+            .Where(song => song.keyString.Equals("C#"))
+            .Select(song => song.Names)
+            .ToList();
+        foreach(var song in songss)
+        {
+            Console.WriteLine(song);
+        }
+    }
 }
 

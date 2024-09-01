@@ -26,7 +26,7 @@ internal class Music
     [JsonPropertyName("key")]
     public int Key { get; set; }
 
-    public string? keyString
+    public string keyString
     {
         get
         {
